@@ -1,7 +1,4 @@
-/**
- *
- */
-package edu.uvg.structures;
+package org.example;
 
 /**
  * @author MAAG
