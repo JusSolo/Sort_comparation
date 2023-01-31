@@ -60,6 +60,11 @@ public class Archivo_texto {
         return lista;
     }
 
+    /**
+     * Este metodo permite escribir una lista en un archivo .txt donde cada linea es una "casilla" de la lista
+     * @param nombre es el nombre que tendra el archivo de texto
+     * @param lista es la lista que se desea escribir en el archivo de texto
+     */
     public void Escribir(String nombre, SingleLinkedList<Integer> lista){
         //Un texto cualquiera guardado en una variable
 
@@ -74,7 +79,7 @@ public class Archivo_texto {
 
             //Escribimos en el archivo con el metodo write
             for (int i = 0; i < lista.Count(); i++){
-                escribir.write(lista.Get(i));
+                escribir.write("" + lista.Get(i));
                 escribir.write("\r\n");
             }
 
