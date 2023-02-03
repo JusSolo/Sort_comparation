@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-
+        Ordenar_lista orden = new Ordenar_lista();
         System.out.println("Ingrese el tamaño de la lista a generar aleatoriamente: ");
         int numero = Integer.parseInt(getNumber(in));
         //creacion de la lista vacia
@@ -45,7 +45,10 @@ public class Main {
         System.out.println("Presione cualquier tecla para iniciar el ordenamiento de la lista.");
         in.nextLine();
         System.out.println("Ordenando...");
-        // metodo para ordenar lista e imprimirla
+        lista = orden.MergeSort(lista);
+
+        System.out.println("Lista ordenada:");
+        printList(lista);
         System.out.println("Presione cualquier tecla para continuar");
         in.nextLine();
 
@@ -85,16 +88,19 @@ public class Main {
         lista = archivo.leerArchivo(name);
 
         //mismo proceso al anterior
-        System.out.println("**********************\n" +
-                "*    sort elejido    *\n" +
-                "**********************\n \n");
+        System.out.println("**************************\n" +
+                "*      counting sort     *\n" +
+                "**************************\n \n");
         System.out.println("Lista sin ordenar:");
         printList(lista);
-        System.out.println("Presione cualquier tecla para iniciar el ordenamiento de la lista.");
+        System.out.println("Presione Enter para iniciar el ordenamiento de la lista.");
         in.nextLine();
         System.out.println("Ordenando...");
-        // metodo para ordenar lista e imprimirla
-        System.out.println("Presione cualquier tecla para continuar");
+        lista = orden.countsort(lista);
+
+        System.out.println("Lista ordenada:");
+        printList(lista);
+        System.out.println("Presione Enter para continuar");
         in.nextLine();
 
 
