@@ -4,6 +4,130 @@ public class Ordenar_lista {
     public Ordenar_lista() {
     }
 
+    public SingleLinkedList<Integer> RadixSort(SingleLinkedList<Integer> lista){
+        int n = lista.Count();
+        int[] L = new int[n];
+        for (int k = 0; k < n; k++){
+            L[k] = lista.Get(k);
+        }
+        radixSort(L);
+        SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+        for (int k = 0; k < n; k++){
+            list.InsertAtEnd(L[k]);
+        }
+        return list;
+
+    }
+
+    private static void radixSort(int[] arr) {
+        int[][] bucket = new int[10][arr.length];
+        int[] bucketOfElement = new int[10];
+        int max=0;
+        // Encuentra el elemento más grande en la matriz
+        for(int i = 0 ; i < arr.length;i++) {
+            if(arr[i]>max){
+                max = arr[i];
+            }
+        }
+        // Calcula el número de bits del elemento más grande
+        int maxLength = (max+"").length();
+        for(int m = 0,n=1;m<maxLength;m++,n*=10) {
+            // Coloca los números en arr en los cubos correspondientes según sus unidades, decenas, centenas, etc.
+            for(int i = 0 ; i < arr.length;i++) {
+                int digit = arr[i]/n%10;
+                // Asignar el valor de arr [i] a la matriz bidimensional en el depósito
+                bucket[digit][bucketOfElement[digit]] = arr[i];
+                bucketOfElement[digit]++;
+            }
+            int index = 0;
+            // Leer los elementos en el depósito y reasignarlos a arr
+            for(int j = 0;j<10;j++) {
+                for(int k = 0 ; k<bucketOfElement[j];k++) {
+                    arr[index] = bucket[j][k];
+                    index++;
+                }
+                bucketOfElement[j]=0;// Borrar el número de elementos en cada uno
+            }
+        }
+    }
+
+
+    public SingleLinkedList<Integer> GnomeSort(SingleLinkedList<Integer> lista){
+        int i = 0;
+        int n = lista.Count();
+        int[] L = new int[n];
+        for (int k = 0; k < n; k++){
+            L[k] = lista.Get(k);
+        }
+        while (i < n) {
+            if (i == 0 || L[i] >= L[i-1]) {
+                i++;
+            } else {
+                int temp = 0;
+                temp = L[i];
+                L[i] = L[i-1];
+                L[i-1] = temp;
+                i--;
+            }
+        }
+        SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+        for (int k = 0; k < n; k++){
+            list.InsertAtEnd(L[k]);
+        }
+        return list;
+    }
+
+public SingleLinkedList<Integer> QuikSort(SingleLinkedList<Integer> lista) {
+    int n = lista.Count();
+    int[] L = new int[n];
+    for (int i= 0; i < n; i++){
+        L[i] = lista.Get(i);
+    }
+    quickSort(L,0, n-1);
+    SingleLinkedList<Integer> Lord = new SingleLinkedList<Integer>();
+    for (int i= 0; i < n; i++){
+        Lord.InsertAtEnd(L[i]);
+    }
+    return Lord;
+}
+    private void quickSort(int[] myArray, int inf, int sup) {
+        int i = inf - 1;
+        int j = sup;
+        boolean flag = true;
+        int temp;
+
+
+        if (inf >= sup) {
+            return;
+        }
+
+         int elem_div = myArray[sup];
+
+
+        while (flag) {
+            while( myArray[++i] < elem_div); //Move the index i until it finds an element bigger than elem_div
+            while( (myArray[--j] > elem_div)  && (j > inf)); //Move the index j until it finds element smaller than elem_div
+
+            if (i < j) {
+                temp = myArray[i];
+                myArray[i] = myArray[j];
+                myArray[j] = temp;
+            } else {
+                flag = false;
+            }
+        }
+
+        temp = myArray[i];
+        myArray[i] = myArray[sup];
+        myArray[sup] = temp;
+        quickSort(myArray, inf, i - 1);
+        quickSort(myArray, i + 1, sup);
+    }
+
+
+
+
+
   public SingleLinkedList<Integer> countsort(SingleLinkedList<Integer> lista){
         int max = 0;
         for (int i = 0; i < lista.Count(); i++){

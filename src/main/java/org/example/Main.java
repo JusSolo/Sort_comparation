@@ -29,8 +29,10 @@ public class Main {
         System.out.println("Presione cualquier tecla para iniciar el ordenamiento de la lista.");
         in.nextLine();
         System.out.println("Ordenando...");
-        // metodo para ordenar lista e imprimirla
-        System.out.println("Presione cualquier tecla para continuar");
+        lista = orden.GnomeSort(lista);
+        System.out.println("Lista ordenada:");
+        printList(lista);
+        System.out.println("Presione enter para continuar");
         in.nextLine();
 
         //cargamos la lista original desordenada
@@ -64,7 +66,11 @@ public class Main {
         System.out.println("Presione cualquier tecla para iniciar el ordenamiento de la lista.");
         in.nextLine();
         System.out.println("Ordenando...");
-        // metodo para ordenar lista e imprimirla
+        lista = orden.QuikSort(lista);
+
+        System.out.println("Lista ordenada:");
+        printList(lista);
+
         System.out.println("Presione cualquier tecla para continuar");
         in.nextLine();
 
@@ -80,7 +86,11 @@ public class Main {
         System.out.println("Presione cualquier tecla para iniciar el ordenamiento de la lista.");
         in.nextLine();
         System.out.println("Ordenando...");
-        // metodo para ordenar lista e imprimirla
+
+        lista = orden.RadixSort(lista);
+
+        System.out.println("Lista ordenada:");
+        printList(lista);
         System.out.println("Presione cualquier tecla para continuar");
         in.nextLine();
 
