@@ -1,5 +1,8 @@
 package org.example;
 
+/**
+ * The type Ordenar lista.
+ */
 public class Ordenar_lista {
 
     /**
@@ -8,8 +11,11 @@ public class Ordenar_lista {
     public Ordenar_lista() {
     }
 
+
+
     /**
      * ordena
+     *
      * @param lista lista a ordenar
      * @return lista, la lista ordenada
      */
@@ -66,6 +72,7 @@ public class Ordenar_lista {
 
     /**
      * ordena lista
+     *
      * @param lista lista a ordenar
      * @return lita ordenada
      */
@@ -96,6 +103,7 @@ public class Ordenar_lista {
 
     /**
      * ordena una lista
+     *
      * @param lista , lista a ordenar
      * @return lista ordenada
      */
@@ -156,10 +164,11 @@ public class Ordenar_lista {
 
     /**
      * ordena una lista
+     *
      * @param lista lista a ordenar
      * @return lista ordenada
      */
-  public SingleLinkedList<Integer> countsort(SingleLinkedList<Integer> lista){
+    public SingleLinkedList<Integer> countsort(SingleLinkedList<Integer> lista){
         int max = 0;
         for (int i = 0; i < lista.Count(); i++){
             if (lista.Get(i)> max)
@@ -185,6 +194,7 @@ public class Ordenar_lista {
 
     /**
      * ordena lista
+     *
      * @param lista lista a ordenar
      * @return lista ordenada
      */
