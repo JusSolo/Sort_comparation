@@ -1,9 +1,18 @@
 package org.example;
 
 public class Ordenar_lista {
+
+    /**
+     * constructor
+     */
     public Ordenar_lista() {
     }
 
+    /**
+     * ordena
+     * @param lista lista a ordenar
+     * @return lista, la lista ordenada
+     */
     public SingleLinkedList<Integer> RadixSort(SingleLinkedList<Integer> lista){
         int n = lista.Count();
         int[] L = new int[n];
@@ -19,6 +28,10 @@ public class Ordenar_lista {
 
     }
 
+    /**
+     * ordena una lista
+     * @param arr lista a ordenar
+     */
     private static void radixSort(int[] arr) {
         int[][] bucket = new int[10][arr.length];
         int[] bucketOfElement = new int[10];
@@ -51,7 +64,11 @@ public class Ordenar_lista {
         }
     }
 
-
+    /**
+     * ordena lista
+     * @param lista lista a ordenar
+     * @return lita ordenada
+     */
     public SingleLinkedList<Integer> GnomeSort(SingleLinkedList<Integer> lista){
         int i = 0;
         int n = lista.Count();
@@ -77,7 +94,12 @@ public class Ordenar_lista {
         return list;
     }
 
-public SingleLinkedList<Integer> QuikSort(SingleLinkedList<Integer> lista) {
+    /**
+     * ordena una lista
+     * @param lista , lista a ordenar
+     * @return lista ordenada
+     */
+    public SingleLinkedList<Integer> QuikSort(SingleLinkedList<Integer> lista) {
     int n = lista.Count();
     int[] L = new int[n];
     for (int i= 0; i < n; i++){
@@ -90,6 +112,13 @@ public SingleLinkedList<Integer> QuikSort(SingleLinkedList<Integer> lista) {
     }
     return Lord;
 }
+
+    /**
+     *
+     * @param myArray lista a ordenar
+     * @param inf valor
+     * @param sup valor
+     */
     private void quickSort(int[] myArray, int inf, int sup) {
         int i = inf - 1;
         int j = sup;
@@ -125,9 +154,11 @@ public SingleLinkedList<Integer> QuikSort(SingleLinkedList<Integer> lista) {
     }
 
 
-
-
-
+    /**
+     * ordena una lista
+     * @param lista lista a ordenar
+     * @return lista ordenada
+     */
   public SingleLinkedList<Integer> countsort(SingleLinkedList<Integer> lista){
         int max = 0;
         for (int i = 0; i < lista.Count(); i++){
@@ -152,6 +183,11 @@ public SingleLinkedList<Integer> QuikSort(SingleLinkedList<Integer> lista) {
         return  lista_orden;
   }
 
+    /**
+     * ordena lista
+     * @param lista lista a ordenar
+     * @return lista ordenada
+     */
     public SingleLinkedList<Integer> MergeSort(SingleLinkedList<Integer> lista) {
         if (lista.Count() <= 1)
             return lista;
@@ -161,6 +197,12 @@ public SingleLinkedList<Integer> QuikSort(SingleLinkedList<Integer> lista) {
         }
     }
 
+    /**
+     * fusiona  listas de manera especial para ordenarlas
+     * @param A lista 1
+     * @param B lista 2
+     * @return lista fusionada
+     */
     private SingleLinkedList<Integer>  fusion(SingleLinkedList<Integer> A, SingleLinkedList<Integer> B) {
         if (A.IsEmpty())
             return B;
@@ -182,6 +224,11 @@ public SingleLinkedList<Integer> QuikSort(SingleLinkedList<Integer> lista) {
         }
     }
 
+    /**
+     * divide una lista en 2 partes casi iguales
+     * @param lista lista a dividir
+     * @return lista de 2 listas que conforman la original dividida
+     */
     private SingleLinkedList<SingleLinkedList<Integer>> corte(SingleLinkedList<Integer> lista) {
         int n = lista.Count();
         SingleLinkedList<Integer> A = new SingleLinkedList<Integer>();
